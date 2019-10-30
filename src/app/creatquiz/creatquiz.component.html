@@ -1,0 +1,56 @@
+<section class="ml-5">
+    <div class="main ">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search ">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+    <form #myForm="ngForm" (ngSubmit)="cQuiz(myForm.value)">
+        <article class="pt-1">
+            <span>Create New Quiz</span>
+            <hr>
+        </article>
+        <section class="ml-5">
+            <section class="row main">
+                <h6>Quiz Name</h6>
+                <h6 class="ml-auto">10/100</h6>
+            </section>
+            <article class="main">
+                <input type="text" name="quizName" class="main" ngModel>
+            </article>
+            <section class="mt-2">
+                <h6>Quiz image</h6>
+                <div class="main imghi border text-center p-5">
+                    <i class="fas fa-camera fa-4x "></i>
+                    <h6 class="text-justfy">drag image to upload or <a routerLink="">click here</a></h6>
+                </div>
+            </section>
+            <div class="row">
+                <h6 class="mr-4 txtsi">Max size: 2MB</h6>
+                <h6 class="txtsi ml-auto mr-3">Required dimensions 600 x 400</h6>
+            </div>
+            <section class="row main mt-3">
+                <h6>Quiz Title</h6>
+                <h6 class="ml-auto">10/100</h6>
+            </section>
+            <article class="main">
+                <input type="text" name="quizTitle" class="main" placeholder="quiz title here" ngModel>
+            </article>
+            <section class="row main mt-3">
+                <h6>Quiz Description</h6>
+                <h6 class="ml-auto">10/100</h6>
+            </section>
+            <textarea class="main" name="quizDescription" ngModel></textarea>
+            <article>
+                <button class="btn btn-danger mr-5" routerLink=''>cancel</button>
+                <button type="submit" class="btn btn-success ml-5">Save And Create Quiz</button>
+            </article>
+        </section>
+    </form>
+</section>

@@ -1,0 +1,66 @@
+<section class="ml-5">
+    <div class="main ">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search ">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <section>
+        <article class="pt-1">
+            <span>Outcomes</span>
+            <hr>
+        </article>
+        <section class="ml-5">
+            <section class="row main">
+                <h6>Outcome Title</h6>
+                <h6 class="ml-auto">10/100</h6>
+            </section>
+            <form  #myForm="ngForm" (ngSubmit)="addOutcomeUser(myForm.value)">
+                <article class="main">
+                    <input type="text" name="title" class="main" ngModel>
+                </article>
+                <section class="mt-3">
+                    <h6>select outcome type</h6>
+                    <ul class="row">
+                        <li class="decorat" [style.color]="isColored? 'blue':''" (click)="changeColor()">
+                            <img src="./../../assets/redirecturl.PNG">
+                            <h6 class="txtsi">Redirecr URL</h6>
+                        </li>
+                        <li class="ml-4 decorat" [style.color]="isC? 'blue':''" (click)="changeC()">
+                            <img src="./../../assets/paragraph.PNG">
+                            <h6 class="txtsi">Paragraph</h6>
+                        </li>
+                        <li class="ml-4 decorat">
+                            <img src="./../../assets/video.PNG">
+                            <h6 class="txtsi">Video</h6>
+                        </li>
+                    </ul>
+                    <section *ngIf="isColored;">
+
+                        <section class="row main">
+                            <h6>Redirect URL</h6>
+                            <h6 class="ml-auto">10/100</h6>
+                        </section>
+                        <article class="main">
+                            <input type="text" name="url" class="main" #ur ngModel [(ngModel)]="url" (keyup)="write(ur.value)">
+                        </article>
+                    </section>
+                    <textarea *ngIf="isC" class="main" name="content" ngModel #cont ngModel [(ngModel)]="txtarea" (keyup)="writetext(cont.value)"></textarea>
+                    <section class="mt-5">
+                        <button class="btn btn-danger" routerLink=''>Cancek</button>
+                        <button class="btn btn-success ml-5" type="submit">Save And Create Quiz</button>
+                    </section>
+                </section>
+            </form>
+        </section>
+    
+    </section>
+    
+</section>
